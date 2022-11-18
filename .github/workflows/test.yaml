@@ -17,7 +17,7 @@ jobs:
         features:
           - common-amazonlinux
         base_image:
-          - amazonlinx:2
+          - amazonlinux:2
           - amazonlinux:2022
     steps:
       - uses: actions/checkout@v2
