@@ -1,0 +1,27 @@
+name: CI - Test Features
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+
+jobs:
+  test-amazonlinux:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        features:
+          - common-amazonlinux
+        base_image:
+          - amazonlinx:2
+          - amazonlinux:2022
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Install latest devcontainer CLI"
+        run: npm install -g @devcontainers/cli
+      - name: "Generating tests for '${{ matrix.features }}' against '${{ matrix.base_image }}'"
+        run: devcontainer features test -f ${{ matrix.features }} -i ${{ matrix.base_image }} .
