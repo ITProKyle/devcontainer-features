@@ -1,0 +1,31 @@
+{
+    "id": "docker-in-docker-amazonlinux",
+    "name": "Docker (Docker-in-Docker) for Amazon Linux",
+    "version": "0.1.0",
+    "description": "Like [Docker-in-Docker (docker-in-docker](https://github.com/devcontainers/features/tree/main/src/docker-in-docker) but for Amazon Linux. Create child containers *inside* a container, independent from the host's docker instance. Installs Docker extension in the container along with needed CLIs.",
+    "documentationURL": "https://github.com/ITProKyle/devcontainer-features/tree/main/src/docker-in-docker-amzn",
+    "options": {},
+    "entrypoint": "/usr/local/share/docker-init.sh",
+    "privileged": true,
+    "containerEnv": {
+        "DOCKER_BUILDKIT": "1",
+        "PATH": "/usr/sbin:${PATH}"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "mounts": [
+        {
+            "source": "dind-var-lib-docker",
+            "target": "/var/lib/docker",
+            "type": "volume"
+        }
+    ],
+    "installsAfter": [
+        "ghcr.io/itprokyle/devcontainer-features/common-amazonlinux"
+    ]
+}
