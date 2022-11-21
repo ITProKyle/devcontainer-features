@@ -136,7 +136,7 @@ if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
   if [[ ! $(command -v make) ]]; then
     yum install -y make;
   fi
-  if [[ $(yum search openssl11-devel > /dev/null 2>&1) ]]; then
+  if [[ $(yum search openssl11-devel) ]]; then
     package_list+=" openssl11"
     package_list+=" openssl11-devel"
   fi
