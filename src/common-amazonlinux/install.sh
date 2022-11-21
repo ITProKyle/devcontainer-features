@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#
+# Copied From: https://github.com/customink/codespaces-features/blob/main/src/common-amzn/install.sh
+# Which Was Copied From: https://github.com/devcontainers/features/blob/main/src/common-utils/install.sh
 set -e
 
 INSTALL_ZSH=${INSTALL_ZSH:-"true"}

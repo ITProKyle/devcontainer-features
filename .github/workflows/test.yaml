@@ -16,6 +16,7 @@ jobs:
       matrix:
         features:
           - common-amazonlinux
+          - docker-in-docker-amazonlinux
         base_image:
           - amazonlinux:2
           - amazonlinux:2022
