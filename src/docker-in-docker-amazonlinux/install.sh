@@ -55,10 +55,11 @@ fi
 if type docker > /dev/null 2>&1 && type dockerd > /dev/null 2>&1; then
   echo "Docker already installed.";
 else
-  if [[ $(yum search amazon-linux-extras > /dev/null 2>&1) ]]; then
-    yum install -y amazon-linux-extras && \
-      amazon-linux-extras enable docker && \
-      yum install -y docker;
+  if [[ $(yum search amazon-linux-extras) ]]; then
+    yum install -y amazon-linux-extras;
+    amazon-linux-extras enable docker;
+    yum clean metadata;
+    yum install -y docker;
   else
     yum install -y docker;
   fi
