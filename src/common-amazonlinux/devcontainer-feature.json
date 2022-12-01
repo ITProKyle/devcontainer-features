@@ -1,7 +1,7 @@
 {
     "id": "common-amazonlinux",
     "name": "Common Amazon Linux Utilities",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Like [Common Debian Utilities (common-utils)](https://github.com/devcontainers/features/tree/main/src/common-utils) but for Amazon Linux.",
     "documentationURL": "https://github.com/ITProKyle/devcontainer-features/tree/master/src/common-amazonlinux",
     "containerEnv": {
